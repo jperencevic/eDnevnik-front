@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center zaglavlje">
+  <button class="btn btn-outline-success btn-lg" *ngFor="let child of children$ | async" (click)="selectChild(child)">{{child.name}}</button>
+</div>
+
+<table *ngIf="selectedChild" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Predmet</th>
+      <th>Ocene</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let sm of sm$ | async">
+    <td class="text-uppercase">{{sm.subject}}</td>
+    <td>
+      <button type="button" class="btn-lg btn-outiline-secondary" *ngFor="let m of sm.marks" [ngClass]="{'btn btn-danger': m.type.id==1}"
+        data-toggle="popover" title="detalji: {{m.type.type}} {{m.markGiven}} Nastavnik: {{m.ctgs.tgs.teacher.name}} {{m.ctgs.tgs.teacher.lastName}}">{{m.mark}}</button>
+    </td>
+  </tr>
+</table>
+

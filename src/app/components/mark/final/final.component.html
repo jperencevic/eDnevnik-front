@@ -1,0 +1,19 @@
+<h3>Zaključivanje ocene:</h3>
+
+<form>
+  <div class="form-group">
+    <label for="sug" class="col-sm-4 col-form-label">Predložena</label>
+    <input type="number" id="sug" class="form-control" #mark name="suggestion" [(ngModel)]="suggestion" min="1" max="5" readonly>
+  </div>
+  <div class="form-group">
+    <label for="fin" class="col-sm-4 col-form-label">Zaključena</label>
+    <input type="number" id="fin" class="form-control" #mark name="final" [(ngModel)]="fin" min="1" max="5" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" (click)="finalito()">Zakljuci ocenu</button>
+  </div>
+</form>
+
+<button class="btn btn-lg btn-info gumb" (click)="goBack()">
+  Odustani
+</button>

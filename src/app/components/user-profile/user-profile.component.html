@@ -1,0 +1,52 @@
+<div class="form-row float-right">
+  <button class="btn btn-info" (click)="goBack()">
+    Nazad
+  </button>
+</div>
+<div class="row komplet">
+  <div class="col-md-7  mx-auto">
+    <form>
+      <div class="form-group">
+        <label for="name" class="col-sm-4 col-form-label">Ime:</label>
+        <input type="text" id="name" class="form-control" value="{{user.name}}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="lastName" class="col-sm-4 col-form-label">Prezime:</label>
+        <input type="text" id="lastName" class="form-control" value="{{user.lastName}}" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-sm-4 col-form-label">Email:</label>
+        <input type="email" id="email" class="form-control" value="{{user.email}}" readonly>
+      </div>
+    </form>
+
+    <div *ngIf="authService.role=='ROLE_PUPIL'">
+      <h4>Podaci o roditelju:</h4>
+      <form action="">
+        <div class="form-group">
+          <label for="name" class="col-sm-4 col-form-label">Ime:</label>
+          <input type="text" id="name" class="form-control" value="{{user.parent.name}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="lastName" class="col-sm-4 col-form-label">Prezime:</label>
+          <input type="text" id="lastName" class="form-control" value="{{user.parent.lastName}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-sm-4 col-form-label">Email:</label>
+          <input type="email" id="email" class="form-control" value="{{user.parent.email}}" readonly>
+        </div>
+      </form>
+      <h4>Podaci o odeljenju:</h4>
+      <form action="">
+        <div class="form-group">
+          <label for="class" class="col-sm-4 col-form-label">Odeljenje:</label>
+          <input type="text" id="class" class="form-control" value="{{user.schoolClass.label}}" readonly>
+        </div>
+        <div class="form-group">
+          <label for="grade" class="col-sm-4 col-form-label">Razred</label>
+          <input type="number" id="grade" class="form-control" value="{{user.schoolClass.grade.label}}" readonly>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

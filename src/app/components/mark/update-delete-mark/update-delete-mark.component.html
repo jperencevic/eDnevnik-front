@@ -1,0 +1,36 @@
+<div class="row komplet">
+  <div class="col-md-7  mx-auto">
+    <form ngNativeValidate (submit)="update()">
+      <div class="form-group">
+        <label for="mark" class="col-sm-4 col-form-label">Ocena</label>
+        <input type="number" id="mark" class="form-control" #mark required min="1" max="5" name="mark" [(ngModel)]="m.mark" required>
+      </div>
+
+      <div class="form-group">
+        <label for="markGiven" class="col-sm-4 col-form-label">Datum provere:</label>
+        <input type="date" id="markGiven" class="form-control" required #markGiven name="given" [(ngModel)]="m.markGiven" required>
+      </div>
+      <div class="form-group">
+        <label for="markType" class="col-sm-4 col-form-label">Tip ocene:</label>
+        <select id="markType" class="form-control" #markType name="type" [(ngModel)]="m.type.id" required>
+          <option *ngFor="let mt of markTypes" [ngValue]="mt.id">{{mt.type}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-primary gumb">Promeni ocenu</button>
+
+
+      </div>
+    </form>
+    <div>
+      <button class="btn btn-lg btn-danger gumb" (click)="deleteMark()">
+        Obriši ocenu
+      </button>
+
+      <button class="btn btn-lg btn-info gumb" (click)="goBack()">
+        Odustani
+      </button>
+    </div>
+  </div>
+</div>

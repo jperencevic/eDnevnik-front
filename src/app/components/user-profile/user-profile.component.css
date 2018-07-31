@@ -1,0 +1,21 @@
+label {
+  font-weight: 600;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.komplet {
+  margin-top: 70px;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+h4 {
+  margin: 10px, 0px;
+}
+
+button{
+  margin-right: 10px;
+}
